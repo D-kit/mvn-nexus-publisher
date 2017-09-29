@@ -12,14 +12,15 @@ Tool for publishing project dependencies to local Nexus repository.
 
 ## Usage
 
-Usage:
+Call syntax:
 
 ```mvn-nexus-publisher <classpath-file> <path-to-settings.xml> <repo-id> <repo-uri> <tmp-folder>```
 
-To create classpath file call: lein deps && lein classpath > deps.txt
-settings.xml should be with user and password for given repo-id
-tmp folder will be used to store temporary files.
-In order to publish all project dependencies just call
+1. To create classpath file call: lein deps && lein classpath > deps.txt
+
+2. settings.xml should be with user and password for given repo-id
+3. tmp folder will be used to store temporary files.
+4. In order to publish all project dependencies just call
 
     $ java -jar mvn-nexus-publisher-0.1.0-standalone.jar <classpath-file> <path-to-settings.xml> <repo-id> <repo-uri> <tmp-folder>
     
