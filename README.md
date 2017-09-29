@@ -26,7 +26,7 @@ Call syntax:
     
 Example:
     
-    $java -jar /Users/mike/IdeaProjects/mvn-nexus-publisher/target/uberjar/mvn-nexus-publisher-0.1-standalone.jar ../myapp/deps.txt  /Users/mike/.m2/settings.xml thirdparty.repo http://nexus.sigma.myorg.com:8099/nexus/content/repositories/FMA_thirdparty /Users/mike/2
+    $java -jar /Users/mike/IdeaProjects/mvn-nexus-publisher/target/uberjar/mvn-nexus-publisher-0.1-standalone.jar ../myapp/deps.txt  /Users/mike/.m2/settings.xml thirdparty.repo http://nexus.myorg.com:8099/nexus/content/repositories/FMA_thirdparty /Users/mike/2
 
 ## License
 
