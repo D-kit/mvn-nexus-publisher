@@ -22,8 +22,9 @@ Call syntax:
 3. tmp folder will be used to store temporary files.
 4. In order to publish all project dependencies just call
 
-    $ java -jar mvn-nexus-publisher-0.1.0-standalone.jar <classpath-file> <path-to-settings.xml> <repo-id> <repo-uri> <tmp-folder>
-    
+```$ java -jar mvn-nexus-publisher-0.1.0-standalone.jar <classpath-file> <path-to-settings.xml> <repo-id> <repo-uri> <tmp-folder>```
+
+
 Example:
     
     $java -jar /Users/mike/IdeaProjects/mvn-nexus-publisher/target/uberjar/mvn-nexus-publisher-0.1-standalone.jar ../myapp/deps.txt  /Users/mike/.m2/settings.xml thirdparty.repo http://nexus.myorg.com:8099/nexus/content/repositories/FMA_thirdparty /Users/mike/2
