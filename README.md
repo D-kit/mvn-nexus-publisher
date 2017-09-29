@@ -20,7 +20,8 @@ Call syntax:
 
 2. settings.xml should be with user and password for given repo-id
 3. tmp folder will be used to store temporary files.
-4. In order to publish all project dependencies just call
+4. Be sure that maven (mvn) is installed and available from command line (in PATH$)
+5. In order to publish all project dependencies just call
 
 ```$ java -jar mvn-nexus-publisher-0.1.0-standalone.jar <classpath-file> <path-to-settings.xml> <repo-id> <repo-uri> <tmp-folder>```
 
