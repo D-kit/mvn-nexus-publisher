@@ -4,7 +4,7 @@ Tool for publishing project dependencies to local Nexus repository.
 
 ## Installation
 
-1. Download source codes from http://example.com/FIXME.
+1. Download source codes from https://github.com/middlesphere/mvn-nexus-publisher
 2. Build project with command:
 
         $ lein uberjar
