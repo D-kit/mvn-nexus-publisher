@@ -15,7 +15,7 @@
         (mapv (fn [x] (str/trim x)) (str/split jars-str #":"))
         (println "can't find classpath begining using regex \"classes:\"")))
     (catch Exception e
-      (throw (ex-info "can't parse deps file" {:path classpath-file :ex e})))))
+      (println "can't parse deps file" {:path classpath-file :ex e}))))
 
 (defn copy-file
   [source-path dest-path]
@@ -27,13 +27,13 @@
   [^String jar-file ^String tmp-folder]
   (try
     (let [tmp-jar-file (str tmp-folder (.getName (io/file jar-file)))
-          pom-file (str (first (str/split jar-file #".jar$")) ".pom")
+          pom-file     (str (first (str/split jar-file #".jar$")) ".pom")
           tmp-pom-file (str tmp-folder (.getName (io/file pom-file)))]
       (copy-file jar-file tmp-jar-file)
       (copy-file pom-file tmp-pom-file)
       {:pom tmp-pom-file :jar tmp-jar-file})
     (catch Exception e
-      (throw (ex-info "can't create jar temp copy" {:path jar-file :tmp-folder tmp-folder :ex e})))))
+      (println "can't create jar temp copy" {:path jar-file :tmp-folder tmp-folder :ex e}))))
 
 (defn pom-jar-temp-delete
   "delete previously created temp pom and jar files."
@@ -42,7 +42,7 @@
     (.delete (io/file tmp-jar-file))
     (.delete (io/file tmp-pom-file))
     (catch Exception e
-      (throw (ex-info "can't delete jar temp copy" {:ex e})))))
+      (println "can't delete jar temp copy" {:ex e}))))
 
 (defn publish-to-nexus
   "perform publishing jar to local nexus repo.
@@ -56,9 +56,9 @@
              (str "-Durl=" repo-uri) "-DcreateChecksum=true" {:out writer})
         (println (str writer))))
     (catch Exception e
-      (throw (ex-info "can't publish to nexus" {:tmp-jar tmp-jar-file  :tmp-pom tmp-pom-file :ex e
-                                                :settings mvn-settings-file :repo-id repo-id
-                                                :repo-uri repo-uri})))))
+      (println "can't publish to nexus" {:tmp-jar  tmp-jar-file      :tmp-pom tmp-pom-file :ex e
+                                         :settings mvn-settings-file :repo-id repo-id
+                                         :repo-uri repo-uri}))))
 
 (defn -main
   "I don't do a whole lot ... yet."
