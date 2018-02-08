@@ -1,4 +1,4 @@
-(defproject mvn-nexus-publisher "0.3.1-SNAPSHOT"
+(defproject mvn-nexus-publisher "0.3.1"
   :description "Tool for publishing project dependencies tree to local Nexus repository."
   :url "http://example.com/FIXME"
   :license {:name "Eclipse Public License"
